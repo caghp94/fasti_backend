@@ -1,0 +1,6 @@
+const mongoose = require('mongoose');
+
+module.exports = mongoose.model('Category', {
+    name: String,
+    isActive: Boolean
+}, 'categories');
