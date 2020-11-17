@@ -34,8 +34,9 @@ app.post('/users/auth', (req, res) => {
     User.findOne({ phoneNumber: req.body.phoneNumber, password: req.body.password }, function (err, user) {
         if (user != null) {
             res.status(200).send({ status: 1, message: 'Login exitoso', data: user });
+        } else {
+            res.status(200).send({ status: 0, message: 'Verifica tu usuario o contraseña', data: null });
         }
-        res.status(200).send({ status: 0, message: 'Verifica tu usuario o contraseña', data: null });
     });
 });
 
